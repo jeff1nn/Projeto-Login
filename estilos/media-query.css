@@ -1,73 +1,88 @@
-@charset "UTF-8";
+@charset "UTF-8"; /* Define o conjunto de caracteres utilizado no arquivo */
 
-/* Typical Device Breakpoints
-------------------------------
-
-Pequenas telas: até 600px
-Celular: de 600px até 768px
-Tablet: 768px até 992px
-Desktop: 992px até 1200px
-Grandes telas: acima de 1200px
+/* 
+   Typical Device Breakpoints 
+   ------------------------------
+   Definem os intervalos de largura de tela para aplicar estilos específicos:
+   - Pequenas telas: até 600px
+   - Celular: 600px até 768px
+   - Tablet: 768px até 992px
+   - Desktop: 992px até 1200px
+   - Grandes telas: acima de 1200px
 */
 
-@media screen and (min-width: 768px) and (max-width: 992px){
+@media screen and (min-width: 768px) and (max-width: 992px) { /* Estilos para telas entre 768px e 992px, normalmente tablets */
 
-    body{
-        background-image: linear-gradient(to top, #49a09d,#5f2c82);
+    body {
+        background-image: linear-gradient(to top, #49a09d, #5f2c82); /* Aplica um gradiente ao fundo do corpo */
     }
 
-    section#login{
-        width: 90vw;
+    section#login {
+        width: 90vw; /* Define a largura do login como 90% da largura da tela */
+        height: 280px; /* Altura fixa do login */
     }
 
-    section#login > div#imagem{
-        float: left;
-        width: 30%;
-        height: 100%;
+    section#login > div#imagem {
+        float: left; /* Posiciona a div à esquerda */
+        width: 30%; /* Define a largura como 30% do pai */
+        height: 100%; /* Altura total do elemento pai */
     }
 
-    section#login > div#formulario{
-        float: right;
-        width: 70%;
+    section#login > div#formulario {
+        float: right; /* Posiciona a div à direita */
+        width: 70%; /* Define a largura como 70% do pai */
     }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 992px) { /* Estilos para telas acima de 992px, típicas de desktops */
 
-    body{
-        background-image: linear-gradient(to top, #49a09d,#5f2c82);
+    body {
+        background-image: linear-gradient(to top, #49a09d, #5f2c82); /* Gradiente aplicado ao fundo */
     }
 
-    section#login{
-        width: 950px;
+    section#login {
+        width: 950px; /* Define uma largura fixa para a seção de login */
+        height: 400px; /* Altura fixa */
+        display: flex; /* Usa Flexbox para alinhar elementos */
+        flex-direction: row; /* Organiza os filhos em uma linha */
     }
 
-    section#login > div#imagem{
-        float: right;
-        width: 50%;
-        height: 100%;
+    section#login > div#imagem {
+        float: left; /* Posiciona a div à esquerda */
+        width: 50%; /* Ocupa metade da largura */
+        height: 100%; /* Altura total do pai */
     }
 
-    section#login > div#formulario{
-        float: left;
-        width: 50%;
+    section#login > div#formulario {
+        float: right; /* Posiciona a div à direita */
+        width: 50%; /* Ocupa metade da largura */
+        display: flex; /* Flexbox para alinhar conteúdo */
+        flex-direction: column; /* Organiza o conteúdo em coluna */
+        justify-content: center; /* Centraliza o conteúdo verticalmente */
     }
 
     div#formulario > h1 {
-        text-align: center;
-        margin-bottom: 10px;
+        text-align: center; /* Centraliza o texto */
+        margin-bottom: 10px; /* Espaçamento inferior */
     }
 
-    div#formulario > p{
-        float: left;
-        width: 50%;
+    div#formulario > p {
+        float: left; /* Posiciona os parágrafos à esquerda */
+        width: 50%; /* Ocupa metade da largura do pai */
     }
 
-    div#formulario > h1{
-        font-size: 2em;
+    div#formulario > h1 {
+        font-size: 2em; /* Define o tamanho da fonte maior para o título */
     }
 
-    div#formulario > p{
-        font-size: 1.2em;
+    div#formulario > p {
+        font-size: 1em; /* Define o tamanho da fonte para os parágrafos */
+        margin: 20px 0px; /* Adiciona margem superior e inferior */
     }
 }
+
+
+/* Breakpoints: Os intervalos são usados para determinar em quais larguras de tela os estilos serão aplicados.
+Estilos de fundo: Gradientes são aplicados ao corpo para criar um visual agradável.
+Seção de login: As dimensões e o layout variam dependendo do tamanho da tela.
+Flexbox: Utilizado em telas maiores para facilitar o alinhamento do conteúdo. */
